@@ -1,5 +1,3 @@
-'use strict';
-
 new WOW({
   mobile: false
 }).init();
@@ -8,7 +6,7 @@ let swiper = new Swiper('.swiper-container', {
   loop: true,
   slidesPerView: 1,
   spaceBetween: 30,
-  centeredSlides : true,
+  centeredSlides: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -38,24 +36,24 @@ let swiper = new Swiper('.swiper-container', {
   }
 });
 
-$(function() {
+$(function () {
   // window スクロール
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('.floating').fadeIn();
     } else {
       $('.floating').fadeOut();
-    }  
+    }
   });
 
   // スクロールトップボタン
-  $('.floating').click(function() {
-    $('html, body').animate({scrollTop: 0}, 500);
+  $('.floating').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 500);
   });
 
   // モーダル
   let scrollY;
-  $('.register-button').click(function() {
+  $('.register-button').click(function () {
     scrollY = -(window.scrollY) + 'px';
     $('#full-screen').fadeIn();
     $('.register').fadeIn();
@@ -63,7 +61,7 @@ $(function() {
     $('body').css('top', scrollY);
   });
 
-  $('.close-button').click(function() {
+  $('.close-button').click(function () {
     $('#full-screen').fadeOut();
     $('.register').fadeOut();
     $('body').css('position', '');
